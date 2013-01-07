@@ -13,10 +13,10 @@ public class CastingSpells : MonoBehaviour {
 
 	void Update(){
         if(Input.GetMouseButtonDown(0)){
-            //Rigidbody newFireballObject = Instantiate(fireballObject, spawnPos.position, spawnPos.rotation) as Rigidbody;
-            //newFireballObject.name = "fireball";
-            //newFireballObject.AddForce(transform.forward * 4000.0f);
-            //Destroy(newFireballObject.gameObject, 2.5f);
+            Rigidbody newFireballObject = Instantiate(fireballObject, spawnPos.position, spawnPos.rotation) as Rigidbody;
+            newFireballObject.name = "fireball";
+            newFireballObject.AddForce(transform.forward * 4000.0f);
+            Destroy(newFireballObject.gameObject, 2.5f);
         }
 	}
 }

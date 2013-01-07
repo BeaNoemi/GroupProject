@@ -9,7 +9,7 @@ public class Entity : MonoBehaviour{
 
     public Transform myTransform = null;
     public Transform player = null;
-
+	public Transform enemy = null;
     public bool isAttacking = false;
     public bool isGrounded = false;
     

@@ -45,12 +45,16 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Characters\Enemy\Charger\ChargerAI.cs" />
+     <Compile Include="Assets\Scripts\Characters\Enemy\Enemy.cs" />
      <Compile Include="Assets\Scripts\Characters\Enemy\Flying Mob\FlyingMob.cs" />
      <Compile Include="Assets\Scripts\Characters\Enemy\Imp\ImpAI.cs" />
      <Compile Include="Assets\Scripts\Characters\Enemy\Imp\ImpLeaderAI.cs" />
      <Compile Include="Assets\Scripts\Characters\Enemy\Tank\TankAI.cs" />
      <Compile Include="Assets\Scripts\Characters\Enemy\Teleporter\TeleporterAI.cs" />
      <Compile Include="Assets\Scripts\Characters\Entity.cs" />
+     <Compile Include="Assets\Scripts\Characters\Friendly\Friendly Mob.cs" />
+     <Compile Include="Assets\Scripts\Characters\Friendly\Pets\Hellhound\Hellhound.cs" />
+     <Compile Include="Assets\Scripts\Characters\Friendly\Pets\Pet.cs" />
      <Compile Include="Assets\Scripts\Characters\Player\CastingSpells.cs" />
      <Compile Include="Assets\Scripts\Characters\Player\PlayerCamera.cs" />
      <Compile Include="Assets\Scripts\Characters\Player\PlayerControls.cs" />

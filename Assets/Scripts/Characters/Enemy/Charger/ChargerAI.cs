@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class ChargerAI : Entity{
+public class ChargerAI : Enemy{
     public int chargeSpeed = 13;
     public float cooldownTime = 3;
     public float cooldownTimer = 0;
