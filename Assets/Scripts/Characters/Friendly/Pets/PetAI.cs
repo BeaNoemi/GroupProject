@@ -7,7 +7,7 @@ public class PetAI : MonoBehaviour {
 	public int roationSpeed;
 	public int maxDistance; 
 	private Transform myTransform;
-	
+	public GameObject go;
 	
 	
 	void Awake(){
@@ -19,8 +19,7 @@ public class PetAI : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-	GameObject go = GameObject.FindGameObjectWithTag("Enemy"); 
-		
+	 go = GameObject.FindGameObjectWithTag("Enemy"); 
 		target=go.transform;
 		
 		maxDistance=2;
@@ -28,19 +27,27 @@ public class PetAI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	Debug.DrawLine (target.position,myTransform.position,Color.yellow);
+		if(target == null) {
+			go = GameObject.FindGameObjectWithTag("Enemy"); 
+		
+			target=go.transform;
+			
+		}else{	
+			
+		
+			Debug.DrawLine (target.position,myTransform.position,Color.yellow);
 	
-		//look	at target
+			//look	at target
+			
+			myTransform.rotation=Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position ),roationSpeed * Time.deltaTime );
 		
-		myTransform.rotation=Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position ),roationSpeed * Time.deltaTime );
 		
-		
-		if(Vector3.Distance (target.position, myTransform.position )> maxDistance){
-		//Move to target
+			if(Vector3.Distance (target.position, myTransform.position )> maxDistance){
+			//Move to target
 	
-		myTransform.position +=  myTransform.forward * moveSpeed *Time.deltaTime;
+				myTransform.position +=  myTransform.forward * moveSpeed *Time.deltaTime;
+			}
 		}
-		
 		
 	}
 	

@@ -1,13 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Characters\Entity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Characters\Friendly\Pets\PetAI.cs">
     <Files>
-      <File FileName="..\..\Unity First\Assets\Scripts\PlayerHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Characters\Friendly\Pets\PetAttack.cs" Line="21" Column="23" />
-      <File FileName="Assets\Scripts\Characters\Entity.cs" Line="6" Column="1" />
-      <File FileName="Assets\Scripts\Characters\Friendly\Friendly Mob.cs" Line="8" Column="3" />
-      <File FileName="Assets\Scripts\Characters\Friendly\Pets\Pet.cs" Line="34" Column="2" />
-      <File FileName="Assets\Scripts\Characters\Friendly\Pets\Hellhound\Hellhound.cs" Line="10" Column="1" />
+      <File FileName="Assets\Scripts\Characters\Friendly\Pets\Pet.cs" Line="21" Column="2" />
+      <File FileName="Assets\Scripts\Characters\Friendly\Pets\PetAttack.cs" Line="64" Column="5" />
+      <File FileName="Assets\Scripts\Characters\Entity.cs" Line="70" Column="26" />
+      <File FileName="Assets\Scripts\Characters\Friendly\Pets\Hellhound\Hellhound.cs" Line="8" Column="3" />
+      <File FileName="Assets\Scripts\Characters\Friendly\Pets\PetAI.cs" Line="22" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

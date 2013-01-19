@@ -18,18 +18,6 @@ public class Pet : FriendlyMob {
       
     }
 	*/
-	//public void AddjustHealth(int adj){
-	//	health += adj;
-		
-	//	if (health<0){
-	//		health=0;
-	//	} 
-	//	if (health > maxHealth){
-	//	health = maxHealth;
-			
-	//	}
-		
-		
-	//}
+	
 	
 }
