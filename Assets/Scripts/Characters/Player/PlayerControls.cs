@@ -14,7 +14,7 @@ public class PlayerControls : Entity{
     public float delayToFire;
 
 	void Start(){
-        InitEntity("Player", null, 100, 9, 4, 7, 1.5f);
+        InitEntity("Player", null, 100,100, 9, 4, 7, 1.5f);
 		rbTarget = GetComponent<Rigidbody>();
 		rbTarget.freezeRotation = true;
 

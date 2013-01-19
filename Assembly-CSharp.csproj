@@ -55,6 +55,8 @@
      <Compile Include="Assets\Scripts\Characters\Friendly\Friendly Mob.cs" />
      <Compile Include="Assets\Scripts\Characters\Friendly\Pets\Hellhound\Hellhound.cs" />
      <Compile Include="Assets\Scripts\Characters\Friendly\Pets\Pet.cs" />
+     <Compile Include="Assets\Scripts\Characters\Friendly\Pets\PetAI.cs" />
+     <Compile Include="Assets\Scripts\Characters\Friendly\Pets\PetAttack.cs" />
      <Compile Include="Assets\Scripts\Characters\Player\CastingSpells.cs" />
      <Compile Include="Assets\Scripts\Characters\Player\PlayerCamera.cs" />
      <Compile Include="Assets\Scripts\Characters\Player\PlayerControls.cs" />

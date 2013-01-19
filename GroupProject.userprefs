@@ -2,13 +2,18 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Characters\Entity.cs">
     <Files>
-      <File FileName="Assets\Scripts\Characters\Enemy\Charger\ChargerAI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Characters\Entity.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Characters\Enemy\Enemy.cs" Line="7" Column="66" />
+      <File FileName="..\..\Unity First\Assets\Scripts\PlayerHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Characters\Friendly\Pets\PetAttack.cs" Line="21" Column="23" />
+      <File FileName="Assets\Scripts\Characters\Entity.cs" Line="6" Column="1" />
+      <File FileName="Assets\Scripts\Characters\Friendly\Friendly Mob.cs" Line="8" Column="3" />
+      <File FileName="Assets\Scripts\Characters\Friendly\Pets\Pet.cs" Line="34" Column="2" />
+      <File FileName="Assets\Scripts\Characters\Friendly\Pets\Hellhound\Hellhound.cs" Line="10" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Steven\Documents\GitHub\GroupProject\Assets\Scripts\Characters\Friendly\Pets\Pet Attack.cs" line="47" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

@@ -13,7 +13,7 @@ public class FlyingMob : Entity {
     public Vector3 swoopPos = Vector3.zero;
 
 	void Start(){
-        InitEntity("Flying Mob", player, 100, 10, 10, 40, 1f);
+        InitEntity("Flying Mob", player, 100,100, 10, 10, 40, 1f);
         cooldownTimer = swoopTime;
     }
 	

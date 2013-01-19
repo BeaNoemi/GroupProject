@@ -17,17 +17,20 @@ public class Entity : MonoBehaviour{
 
     public string mobName = null;
     public Transform target = null;
-    public int health = 0;
+	public int health = 0;
     public int moveSpeed = 0;
     public int rotationSpeed = 0;
     public int strength = 0;
+	public int maxHealth = 100;
     public float attackDistance = 0.0f;
+	
     
 
-    public void InitEntity(string name, Transform targ, int h, int ms, int rs, int str, float ad){
+    public void InitEntity(string name, Transform targ, int hp,int maxhp, int ms, int rs, int str, float ad){
         mobName = name;
         target = targ;
-        health = h;
+        health = hp;
+		maxHealth = maxhp;
         moveSpeed = ms;
         rotationSpeed = rs;
         strength = str;
@@ -42,10 +45,13 @@ public class Entity : MonoBehaviour{
     }
 
     void Update(){
-        if(health <= 0){
+        if(health == 0){
             Destroy(gameObject);
         }
         rigidbody.AddForce(new Vector3 (0, -gravity * rigidbody.mass, 0));
+		
+		
+		
     }
 
     public void CheckGrounded(){
