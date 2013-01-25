@@ -1,13 +1,12 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerCamera : MonoBehaviour {
+public class PlayerCamera : MonoBehaviour{
 
 	private Transform myTransform;
 	private Camera mCamera;
-    private Quaternion OriginalRotation;
 
-    private float RotationX = 0f;
+    public float RotationX = 0f;
     private float RotationY = 0f;
 
     public float sensitivityX = 200f;
@@ -18,14 +17,15 @@ public class PlayerCamera : MonoBehaviour {
     void Awake(){
         myTransform = transform;
         mCamera = Camera.mainCamera;
-        OriginalRotation = transform.localRotation;
     }
 
 	void FixedUpdate(){
+        RotationX = Input.GetAxis("Mouse X") * sensitivityX * Time.deltaTime;
         RotationY -= Input.GetAxis("Mouse Y") * sensitivityY * Time.deltaTime;
         RotationY = Mathf.Clamp(RotationY, minimumY, maximumY);
 
-        //mCamera.transform.position = new Vector3(mCamera.transform.position.x, RotationY, mCamera.transform.position.z);
-        //mCamera.transform.LookAt(myTransform);
+        mCamera.transform.position = new Vector3(mCamera.transform.position.x, RotationY, mCamera.transform.position.z);
+        mCamera.transform.RotateAround(myTransform.position, Vector3.up, RotationX);
+        mCamera.transform.LookAt(myTransform);
 	}
 }

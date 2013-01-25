@@ -23,8 +23,6 @@ public class Entity : MonoBehaviour{
     public int strength = 0;
 	public int maxHealth = 100;
     public float attackDistance = 0.0f;
-	
-    
 
     public void InitEntity(string name, Transform targ, int hp,int maxhp, int ms, int rs, int str, float ad){
         mobName = name;
