@@ -8,7 +8,7 @@ public class Entity : MonoBehaviour{
     public PlayerControls charControls;
 
     public Transform myTransform = null;
-    public Transform player = null;
+    public static Transform player = null;
 	public Transform enemy = null;
     public bool isAttacking = false;
     public bool isGrounded = false;
@@ -24,7 +24,7 @@ public class Entity : MonoBehaviour{
 	public int maxHealth = 100;
     public float attackDistance = 0.0f;
 
-    public void InitEntity(string name, Transform targ, int hp,int maxhp, int ms, int rs, int str, float ad){
+    public void InitEntity(string name, Transform targ, int hp, int maxhp, int ms, int rs, int str, float ad){
         mobName = name;
         target = targ;
         health = hp;
@@ -34,7 +34,7 @@ public class Entity : MonoBehaviour{
         strength = str;
         attackDistance = ad;
     }
-    
+
     void Awake(){
         player = GameObject.FindGameObjectWithTag("Player").transform;
         castSpells = player.GetComponent<CastingSpells>();
