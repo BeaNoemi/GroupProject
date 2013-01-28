@@ -7,7 +7,7 @@ public class ImpLeaderAI : Entity{
     public int sideJumpDist = 3;
 
 	void Start(){
-        InitEntity("Imp", player, 100,100, 8, 0, 10, 1.5f);
+        InitEntity("Imp", player, 100,100, 8, 0, 10, 1.5f, 10);
     }
 	
 	void FixedUpdate(){

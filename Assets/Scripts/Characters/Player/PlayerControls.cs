@@ -9,7 +9,12 @@ public class PlayerControls : Entity{
     public enum PlayerState{
         Idle,
         Moving,
-        Attacking
+    };
+
+    public enum AttackState{
+        None,
+        AttackingStill,
+        AttackingMoving
     };
 
     public enum PlayerAnimState{
@@ -22,11 +27,13 @@ public class PlayerControls : Entity{
         ForwardDiagonalLeft,
         BackDiagonalRight,
         BackDiagonalLeft,
-        Attacking
+        AttackingStill,
+        AttackingMoving
     };
 
     //Player Controls
     public PlayerState playerState = PlayerState.Idle;
+    public AttackState attackState = AttackState.None;
     public PlayerAnimState playerAnimState = PlayerAnimState.Idle;
     public float dodgeAmount = 300f;
 
@@ -45,7 +52,7 @@ public class PlayerControls : Entity{
     public float delayToFire;
 
 	void Start(){
-        InitEntity("Player", null, 100,100, 9, 4, 7, 1.5f);
+        InitEntity("Player", null, 100, 100, 9, 4, 7, 1.5f, 0);
 
         mCamera = Camera.mainCamera;
 
@@ -105,6 +112,10 @@ public class PlayerControls : Entity{
                 mCamera.transform.position = new Vector3(mCamera.transform.position.x, RotationY, mCamera.transform.position.z);
                 mCamera.transform.RotateAround(myTransform.position, Vector3.up, RotationX);
                 mCamera.transform.LookAt(myTransform);
+
+                if(Input.GetMouseButtonDown(0)){
+                    attackState = AttackState.AttackingStill;
+                }
                 break;
             case PlayerState.Moving:
                 myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
@@ -112,9 +123,10 @@ public class PlayerControls : Entity{
                 mCamera.transform.position = new Vector3(mCamera.transform.position.x, RotationY, mCamera.transform.position.z);
                 myTransform.Rotate(Vector3.up, RotationX);
                 mCamera.transform.LookAt(myTransform);
-                break;
-            case PlayerState.Attacking:
 
+                if(Input.GetMouseButtonDown(0)){
+                    attackState = AttackState.AttackingMoving;
+                }
                 break;
         }
 
@@ -164,7 +176,10 @@ public class PlayerControls : Entity{
                 myTransform.rotation = Quaternion.Euler(myTransform.rotation.x, mCamera.transform.localEulerAngles.y + (180 - 45), myTransform.rotation.z);
                 mCamera.transform.parent = myTransform;
                 break;
-            case PlayerAnimState.Attacking:
+            case PlayerAnimState.AttackingStill:
+
+                break;
+            case PlayerAnimState.AttackingMoving:
 
                 break;
         }

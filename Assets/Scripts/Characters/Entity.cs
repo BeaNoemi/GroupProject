@@ -23,8 +23,9 @@ public class Entity : MonoBehaviour{
     public int strength = 0;
 	public int maxHealth = 100;
     public float attackDistance = 0.0f;
+    public float viewDistance = 0.0f;
 
-    public void InitEntity(string name, Transform targ, int hp, int maxhp, int ms, int rs, int str, float ad){
+    public void InitEntity(string name, Transform targ, int hp, int maxhp, int ms, int rs, int str, float ad, float vd){
         mobName = name;
         target = targ;
         health = hp;
@@ -33,6 +34,7 @@ public class Entity : MonoBehaviour{
         rotationSpeed = rs;
         strength = str;
         attackDistance = ad;
+        viewDistance = vd;
     }
 
     void Awake(){
@@ -47,9 +49,6 @@ public class Entity : MonoBehaviour{
             Destroy(gameObject);
         }
         rigidbody.AddForce(new Vector3 (0, -gravity * rigidbody.mass, 0));
-		
-		
-		
     }
 
     public void CheckGrounded(){
@@ -81,18 +80,11 @@ public class Entity : MonoBehaviour{
 	public void AdjustHealth(int adj){
 		health += adj;
 		
-		if (health<0){
+		if(health<0){
 			health=0;
 		} 
 		if (health > maxHealth){
-		health = maxHealth;
-			
+		    health = maxHealth;
 		}
-		
-		
 	}
-	
-	
-	
-	
 }

@@ -4,7 +4,7 @@ using System.Collections;
 public class TankAI : Entity{
 
 	void Start(){
-        InitEntity("Tank", player, 100,100, 10, 10, 40, 1.5f);
+        InitEntity("Tank", player, 100,100, 10, 10, 40, 1.5f, 10);
     }
 
 	void FixedUpdate() {

@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\Characters\Player\PlayerControls.cs" />
      <Compile Include="Assets\Scripts\GUI\Main Menu\MainMenuGUI.cs" />
      <Compile Include="Assets\Scripts\GUI\Other\Cursor\CustomCursor.cs" />
+     <Compile Include="Assets\Scripts\Other\FPSTest.cs" />
      <Compile Include="Assets\Scripts\SpellSystem\Fireball\FireBall.cs" />
      <Compile Include="Assets\Scripts\SpellSystem\ISpell.cs" />
      <Compile Include="Assets\Scripts\SpellSystem\Spells.cs" />

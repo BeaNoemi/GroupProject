@@ -12,7 +12,7 @@ public class ImpAI : Entity{
 	void Start(){
         impLeader = GameObject.Find("ImpLeader").transform;
         impLeaderAi = impLeader.GetComponent<ImpLeaderAI>();
-        InitEntity("Imp", impLeader, 100,100, 6, 0, 10, 1.5f);
+        InitEntity("Imp", impLeader, 100,100, 6, 0, 10, 1.5f, 10);
     }
 	
 	void FixedUpdate(){
