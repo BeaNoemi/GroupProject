@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class FlyingMob : Entity {
+public class FlyingMob : Enemy {
 
     public float swoopDistance = 6;
     public float swoopSpeed = 26;
@@ -13,7 +13,7 @@ public class FlyingMob : Entity {
     public Vector3 swoopPos = Vector3.zero;
 
 	void Start(){
-        InitEntity("Flying Mob", player, 100,100, 10, 10, 40, 1f, 10);
+        InitEntity("Flying Mob", player, 100,100, 10, 10, 40, 1f, 10, 1);
         cooldownTimer = swoopTime;
     }
 	

@@ -1,10 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class TankAI : Entity{
+public class TankAI : Enemy{
 
 	void Start(){
-        InitEntity("Tank", player, 100,100, 10, 10, 40, 1.5f, 10);
+        InitEntity("Tank", player, 100,100, 10, 10, 40, 1.5f, 10, 2);
     }
 
 	void FixedUpdate() {

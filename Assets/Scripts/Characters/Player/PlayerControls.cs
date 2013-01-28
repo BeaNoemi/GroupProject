@@ -52,7 +52,7 @@ public class PlayerControls : Entity{
     public float delayToFire;
 
 	void Start(){
-        InitEntity("Player", null, 100, 100, 9, 4, 7, 1.5f, 0);
+        InitEntity("Player", null, 100, 100, 9, 4, 7, 1.5f, 0, 1);
 
         mCamera = Camera.mainCamera;
 
@@ -61,6 +61,7 @@ public class PlayerControls : Entity{
 
 	void Update(){
         InputHandeling();
+        AttackEnemy();
 
         //Spells
         delayToFire -= Time.deltaTime;
@@ -112,10 +113,6 @@ public class PlayerControls : Entity{
                 mCamera.transform.position = new Vector3(mCamera.transform.position.x, RotationY, mCamera.transform.position.z);
                 mCamera.transform.RotateAround(myTransform.position, Vector3.up, RotationX);
                 mCamera.transform.LookAt(myTransform);
-
-                if(Input.GetMouseButtonDown(0)){
-                    attackState = AttackState.AttackingStill;
-                }
                 break;
             case PlayerState.Moving:
                 myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
@@ -123,10 +120,6 @@ public class PlayerControls : Entity{
                 mCamera.transform.position = new Vector3(mCamera.transform.position.x, RotationY, mCamera.transform.position.z);
                 myTransform.Rotate(Vector3.up, RotationX);
                 mCamera.transform.LookAt(myTransform);
-
-                if(Input.GetMouseButtonDown(0)){
-                    attackState = AttackState.AttackingMoving;
-                }
                 break;
         }
 
@@ -182,6 +175,44 @@ public class PlayerControls : Entity{
             case PlayerAnimState.AttackingMoving:
 
                 break;
+        }
+    }
+
+    public void AttackEnemy(){
+        RaycastHit hit;
+        isAttacking = false;
+        Vector3 forward = myTransform.TransformDirection(Vector3.forward);
+        Debug.DrawRay(myTransform.position, forward * attackDistance, Color.green);
+
+        if(Physics.Raycast(myTransform.position, forward, out hit, attackDistance)){
+            if(hit.transform.tag == "Enemy"){
+                isAttacking = true;
+                playerEnemy = hit.transform;
+            }
+        }else{
+            playerEnemy = null;
+        }
+
+        if(isAttacking){
+            if(Input.GetMouseButton(0)){
+                if(attackTime < coolDownTime){
+                    attackTime += Time.deltaTime;
+                }else if(attackTime > coolDownTime){
+                    attackTime = 0.0f;
+
+                    switch(playerState){
+                        case PlayerState.Idle:
+                            attackState = AttackState.AttackingStill;
+                            break;
+                        case PlayerState.Moving:
+                            attackState = AttackState.AttackingMoving;
+                            break;
+                    }
+                    Entity entity = (Entity)playerEnemy.GetComponent(typeof(Entity));
+                    Debug.Log(entity.health);
+			        entity.AdjustHealth(strength);
+                }
+            }
         }
     }
 }

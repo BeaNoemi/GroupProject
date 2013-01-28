@@ -3,13 +3,10 @@ using System.Collections;
 
 public class Entity : MonoBehaviour{
 
-    CastingSpells castSpells;
-
-    public PlayerControls charControls;
-
     public Transform myTransform = null;
     public static Transform player = null;
 	public Transform enemy = null;
+    public Transform playerEnemy = null;
     public bool isAttacking = false;
     public bool isGrounded = false;
     
@@ -24,8 +21,11 @@ public class Entity : MonoBehaviour{
 	public int maxHealth = 100;
     public float attackDistance = 0.0f;
     public float viewDistance = 0.0f;
+    public float coolDownTime = 0.0f;
 
-    public void InitEntity(string name, Transform targ, int hp, int maxhp, int ms, int rs, int str, float ad, float vd){
+    public float attackTime = 0.0f;
+
+    public void InitEntity(string name, Transform targ, int hp, int maxhp, int ms, int rs, int str, float ad, float vd, float cdt){
         mobName = name;
         target = targ;
         health = hp;
@@ -35,13 +35,12 @@ public class Entity : MonoBehaviour{
         strength = str;
         attackDistance = ad;
         viewDistance = vd;
+        coolDownTime = cdt;
     }
 
     void Awake(){
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        castSpells = player.GetComponent<CastingSpells>();
         myTransform = transform;
-        charControls = player.GetComponent<PlayerControls>();
     }
 
     void Update(){
@@ -64,21 +63,8 @@ public class Entity : MonoBehaviour{
         }
     }
 
-    public void Attack(){
-        RaycastHit hit;
-        isAttacking = false;
-        Vector3 forward = myTransform.TransformDirection(Vector3.forward);
-        Debug.DrawRay(myTransform.position, forward * attackDistance, Color.green);
-
-        if(Physics.Raycast(myTransform.position, forward, out hit, attackDistance)){
-            if(hit.transform.tag == "Player"){
-                isAttacking = true;
-            }
-        }
-    }
-	
 	public void AdjustHealth(int adj){
-		health += adj;
+		health -= adj;
 		
 		if(health<0){
 			health=0;

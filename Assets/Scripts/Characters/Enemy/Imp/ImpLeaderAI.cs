@@ -1,13 +1,13 @@
 using UnityEngine;
 using System.Collections;
 
-public class ImpLeaderAI : Entity{
+public class ImpLeaderAI : Enemy{
 
     public int jumpHeight = 3;
     public int sideJumpDist = 3;
 
 	void Start(){
-        InitEntity("Imp", player, 100,100, 8, 0, 10, 1.5f, 10);
+        InitEntity("Imp", player, 100,100, 8, 0, 10, 1.5f, 10, 1);
     }
 	
 	void FixedUpdate(){

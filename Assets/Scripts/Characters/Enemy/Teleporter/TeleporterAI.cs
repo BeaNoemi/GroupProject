@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class TeleporterAI : Entity{
+public class TeleporterAI : Enemy{
 
     public float maxX = 4;
     public float maxZ = 4;
@@ -11,7 +11,7 @@ public class TeleporterAI : Entity{
     public float cooldownTimer = 0;
 
 	void Start(){
-        InitEntity("Teleporter", player, 100,100, 10, 10, 40, 1.5f, 10);
+        InitEntity("Teleporter", player, 100,100, 10, 10, 40, 1.5f, 10, 2);
         teleportTime = Random.Range(1, teleportMaxTime);
         cooldownTimer = teleportTime;
     }
