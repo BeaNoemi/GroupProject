@@ -3,34 +3,34 @@ using System.Collections;
 
 public class ChargerAI : Enemy{
     public int chargeSpeed = 13;
-    public float cooldownTime = 3;
-    public float cooldownTimer = 0;
+    public float cooldownChargeTime = 3;
+    public float cooldownChargeTimer = 0;
     public bool isCharging;
 
     void Start(){
-        InitEntity("Charger", player, 100,100, 3, 10, 40, 1.5f, 10, 2);
-        cooldownTimer = cooldownTime;
+        InitEntity("Charger", player, 100, 100, 3, 10, 15, 25, 1.5f, 10, 2);
+        cooldownChargeTimer = cooldownChargeTime;
     }
 
 	void FixedUpdate(){
         Attack();
-        if(!isAttacking){
-            if(cooldownTimer <= 0){
+        if(!isAttacking && target){
+            if(cooldownChargeTimer <= 0){
                 isCharging = true;
                 myTransform.position += myTransform.forward * chargeSpeed * Time.deltaTime;
             }else{
                 myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed*Time.deltaTime);
-                cooldownTimer -= Time.deltaTime;
+                cooldownChargeTimer -= Time.deltaTime;
             }
         }else{
-            cooldownTimer = cooldownTime;
+            cooldownChargeTimer = cooldownChargeTime;
             isCharging = false;
         }
 	}
 
     void OnTriggerEnter(Collider collider){
         if(collider.transform.tag != "Floor"){
-            if(isCharging) cooldownTimer = cooldownTime;
+            if(isCharging) cooldownChargeTimer = cooldownChargeTime;
             isCharging = false;
         }
     }

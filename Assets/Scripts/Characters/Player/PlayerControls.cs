@@ -52,7 +52,7 @@ public class PlayerControls : Entity{
     public float delayToFire;
 
 	void Start(){
-        InitEntity("Player", null, 100, 100, 9, 4, 7, 1.5f, 0, 1);
+        InitEntity("Player", null, 100, 100, 9, 4, 5, 15, 1.5f, 0, 1);
 
         mCamera = Camera.mainCamera;
 
@@ -179,6 +179,13 @@ public class PlayerControls : Entity{
     }
 
     public void AttackEnemy(){
+        if(health == 0){
+            mCamera.transform.parent = null;
+            target = null;
+            player = null;
+            Destroy(gameObject);
+        }
+
         RaycastHit hit;
         isAttacking = false;
         Vector3 forward = myTransform.TransformDirection(Vector3.forward);
@@ -208,9 +215,9 @@ public class PlayerControls : Entity{
                             attackState = AttackState.AttackingMoving;
                             break;
                     }
-                    Entity entity = (Entity)playerEnemy.GetComponent(typeof(Entity));
-                    Debug.Log(entity.health);
-			        entity.AdjustHealth(strength);
+                    Enemy enemy = (Enemy)playerEnemy.GetComponent(typeof(Enemy));
+                    Debug.Log(enemy.health);
+			        enemy.AdjustHealth(strength);
                 }
             }
         }

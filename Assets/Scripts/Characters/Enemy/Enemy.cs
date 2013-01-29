@@ -24,6 +24,17 @@ public class Enemy : Entity{
                 playerEnemy = hit.transform;
             }
         }
-    }
 
+        if(isAttacking){
+            if(attackTime < coolDownTime){
+                attackTime += Time.deltaTime;
+            }else if(attackTime > coolDownTime){
+                attackTime = 0.0f;
+
+                Entity entity = (Entity)target.GetComponent(typeof(Entity));
+			    entity.AdjustHealth(strength);
+
+            }
+        }
+    }
 }

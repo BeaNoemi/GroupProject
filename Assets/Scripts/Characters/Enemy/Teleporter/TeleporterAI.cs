@@ -11,7 +11,7 @@ public class TeleporterAI : Enemy{
     public float cooldownTimer = 0;
 
 	void Start(){
-        InitEntity("Teleporter", player, 100,100, 10, 10, 40, 1.5f, 10, 2);
+        InitEntity("Teleporter", player, 100,100, 10, 10, 15, 25, 1.5f, 10, 2);
         teleportTime = Random.Range(1, teleportMaxTime);
         cooldownTimer = teleportTime;
     }
@@ -19,7 +19,7 @@ public class TeleporterAI : Enemy{
 	void FixedUpdate(){
 	    Attack();
 
-        if(cooldownTimer <= 0){
+        if(cooldownTimer <= 0 && target){
             Vector3 newPos = new Vector3(Random.Range(target.position.x - maxX, target.position.x + maxX), myTransform.position.y, Random.Range(target.position.z - maxZ, target.position.z + maxZ));
             myTransform.position = newPos;
             teleportTime = Random.Range(1, teleportMaxTime);

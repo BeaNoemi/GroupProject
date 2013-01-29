@@ -25,14 +25,14 @@ public class Entity : MonoBehaviour{
 
     public float attackTime = 0.0f;
 
-    public void InitEntity(string name, Transform targ, int hp, int maxhp, int ms, int rs, int str, float ad, float vd, float cdt){
+    public void InitEntity(string name, Transform targ, int hp, int maxhp, int ms, int rs, int minstr, int maxStr, float ad, float vd, float cdt){
         mobName = name;
         target = targ;
         health = hp;
 		maxHealth = maxhp;
         moveSpeed = ms;
         rotationSpeed = rs;
-        strength = str;
+        strength = Random.Range(minstr, maxStr);
         attackDistance = ad;
         viewDistance = vd;
         coolDownTime = cdt;
@@ -45,8 +45,12 @@ public class Entity : MonoBehaviour{
 
     void Update(){
         if(health == 0){
+            Debug.Log("Dead");
             Destroy(gameObject);
         }
+    }
+
+    void FixedUpdate(){
         rigidbody.AddForce(new Vector3 (0, -gravity * rigidbody.mass, 0));
     }
 
