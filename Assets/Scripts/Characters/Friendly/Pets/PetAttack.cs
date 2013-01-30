@@ -54,14 +54,38 @@ public class PetAttack : MonoBehaviour {
 			
 			float direction = Vector3.Dot (dir,transform.forward );
 		
-			Debug.Log (direction );
-		
+			
+			
 			if(distance<2.5f){
 				if(direction>0){
-			
-					Entity  eh2 = (Entity)testtarget.GetComponent("ChargerAI");
-					eh2.AdjustHealth(-10);
+										
+					Enemy eh2 = (Enemy)testtarget.GetComponent ("Enemy");
+						eh2.AdjustHealth (10);
 					
+					
+					/*
+			  		switch (testtarget.name){
+
+						case "Charger":
+							Entity  eh2 = (Entity)testtarget.GetComponent("Enemy");
+							eh2.AdjustHealth(-10);
+						 	Debug.Log("1"); 
+							break;
+						case "Flying":
+						Debug.Log("2"); 
+							break;
+
+						case "Imp": 
+						Debug.Log("3"); 
+							break;
+						case "ImpLeader": 
+						Debug.Log("4"); 
+							break;
+						case "Teleporter": 
+						Debug.Log("5"); 
+							break;
+
+					}	*/												
 				}
 			}
 		}

@@ -6,6 +6,7 @@ public class Enemy : Entity{
 	void Start(){
         
 		target = player;
+		
     
 	}
 	

@@ -29,8 +29,9 @@ public class PetAI : MonoBehaviour {
 	void Update () {
 		if(target == null) {
 			go = GameObject.FindGameObjectWithTag("Enemy"); 
-		
+		if(target != null) {
 			target=go.transform;
+			}
 			
 		}else{	
 			
