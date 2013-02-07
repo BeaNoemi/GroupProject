@@ -27,7 +27,10 @@ public class Entity : MonoBehaviour{
     public float attackTime = 0.0f;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     //When called the entity variables are set
+=======
+>>>>>>> ee77e8f054f1f80a7a243e3b2bd93ae770926987
 =======
 >>>>>>> ee77e8f054f1f80a7a243e3b2bd93ae770926987
     public void InitEntity(string name, Transform targ, int hp, int maxhp, int ms, int rs, int minstr, int maxStr, float ad, float vd, float cdt){
@@ -54,6 +57,9 @@ public class Entity : MonoBehaviour{
         if(health <= 0){
 =======
         if(health == 0){
+<<<<<<< HEAD
+>>>>>>> ee77e8f054f1f80a7a243e3b2bd93ae770926987
+=======
 >>>>>>> ee77e8f054f1f80a7a243e3b2bd93ae770926987
             Debug.Log("Dead");
             Destroy(gameObject);
@@ -62,7 +68,10 @@ public class Entity : MonoBehaviour{
 
     void FixedUpdate(){
 <<<<<<< HEAD
+<<<<<<< HEAD
         //Add gravity
+=======
+>>>>>>> ee77e8f054f1f80a7a243e3b2bd93ae770926987
 =======
 >>>>>>> ee77e8f054f1f80a7a243e3b2bd93ae770926987
         rigidbody.AddForce(new Vector3 (0, -gravity * rigidbody.mass, 0));
