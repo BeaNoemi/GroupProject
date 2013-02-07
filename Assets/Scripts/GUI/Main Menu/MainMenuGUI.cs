@@ -7,8 +7,8 @@ public class MainMenuGUI : MonoBehaviour{
     }
 
     void OnGUI(){
-        //if(GUI.Button(new Rect((Screen.width - 140) /2, 100, 140, 30), "Gameplay prototype"))
-            //Application.LoadLevel(1);
+        if(GUI.Button(new Rect((Screen.width - 140) /2, 100, 140, 30), "Gameplay prototype"))
+            Application.LoadLevel(1);
         if(GUI.Button(new Rect((Screen.width - 100) /2, 135, 100, 30), "Charger AI"))
             Application.LoadLevel(2);
         else if(GUI.Button(new Rect((Screen.width - 100) /2, 170, 100, 30), "Imp AI"))
