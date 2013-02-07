@@ -85,13 +85,7 @@ public class PlayerControls : Entity{
             playerState = PlayerState.Moving;
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         //Set player state for animations
-=======
->>>>>>> ee77e8f054f1f80a7a243e3b2bd93ae770926987
-=======
->>>>>>> ee77e8f054f1f80a7a243e3b2bd93ae770926987
         if(inputX == 0 && inputY == 0){
             playerAnimState = PlayerAnimState.Idle;
         }else if(inputX < 0 && inputY == 0){
@@ -112,24 +106,11 @@ public class PlayerControls : Entity{
             playerAnimState = PlayerAnimState.ForwardDiagonalRight;
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         //Camera control
         RotationX = Input.GetAxis("Mouse X") * sensitivityX * Time.deltaTime;
         RotationY -= Input.GetAxis("Mouse Y") * sensitivityY * Time.deltaTime;
         RotationY = Mathf.Clamp(RotationY, minimumY, maximumY);
 
-        //Set player state
-=======
-        RotationX = Input.GetAxis("Mouse X") * sensitivityX * Time.deltaTime;
-        RotationY -= Input.GetAxis("Mouse Y") * sensitivityY * Time.deltaTime;
-        RotationY = Mathf.Clamp(RotationY, minimumY, maximumY);
->>>>>>> ee77e8f054f1f80a7a243e3b2bd93ae770926987
-=======
-        RotationX = Input.GetAxis("Mouse X") * sensitivityX * Time.deltaTime;
-        RotationY -= Input.GetAxis("Mouse Y") * sensitivityY * Time.deltaTime;
-        RotationY = Mathf.Clamp(RotationY, minimumY, maximumY);
->>>>>>> ee77e8f054f1f80a7a243e3b2bd93ae770926987
         switch(playerState){
             case PlayerState.Idle:
                 mCamera.transform.position = new Vector3(mCamera.transform.position.x, RotationY, mCamera.transform.position.z);
@@ -145,13 +126,7 @@ public class PlayerControls : Entity{
                 break;
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         //Set player animation
-=======
->>>>>>> ee77e8f054f1f80a7a243e3b2bd93ae770926987
-=======
->>>>>>> ee77e8f054f1f80a7a243e3b2bd93ae770926987
         switch(playerAnimState){
             case PlayerAnimState.Idle:
 
