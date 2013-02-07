@@ -45,8 +45,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Standard Assets\Editor\Lava3\Lava3Editor.cs" />
-     <None Include="Assets\New Folder\environmental assets\Lava\Sources\Shaders\Lava.shader" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Water3\Sources\Shaders\FX-Water3.shader" />
+     <None Include="Assets\New Folder\environmental assets\Lava\Sources\Shaders\Lava.shader" />
      <None Include="Assets\Standard Assets\LavaPackage\Sources\Lava.shader" />
   </ItemGroup>
   <ItemGroup>
