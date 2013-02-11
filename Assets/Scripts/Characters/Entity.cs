@@ -16,10 +16,12 @@ public class Entity : MonoBehaviour{
     public string mobName = null;
     public Transform target = null;
 	public int health = 0;
+	public int mana = 0;
     public int moveSpeed = 0;
     public int rotationSpeed = 0;
     public int strength = 0;
 	public int maxHealth = 100;
+	public int maxMana = 100;
     public float attackDistance = 0.0f;
     public float viewDistance = 0.0f;
     public float coolDownTime = 0.0f;
@@ -27,11 +29,13 @@ public class Entity : MonoBehaviour{
     public float attackTime = 0.0f;
 
     //When called the entity variables are set
-    public void InitEntity(string name, Transform targ, int hp, int maxhp, int ms, int rs, int minstr, int maxStr, float ad, float vd, float cdt){
+    public void InitEntity(string name, Transform targ, int hp, int maxhp,int mp, int maxmp, int ms, int rs, int minstr, int maxStr, float ad, float vd, float cdt){
         mobName = name;
         target = targ;
         health = hp;
 		maxHealth = maxhp;
+		mana = mp;
+		maxMana = maxmp;
         moveSpeed = ms;
         rotationSpeed = rs;
         strength = Random.Range(minstr, maxStr);
@@ -79,6 +83,17 @@ public class Entity : MonoBehaviour{
 		} 
 		if (health > maxHealth){
 		    health = maxHealth;
+		}
+	}
+	
+	public void AdjustMana (int adj){
+		mana -= adj;
+		
+		if(mana<0){
+			mana=0;
+		}
+		if (mana > maxMana){
+			mana = maxMana;
 		}
 	}
 }
