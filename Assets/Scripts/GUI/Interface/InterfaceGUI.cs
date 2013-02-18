@@ -9,7 +9,11 @@ public class InterfaceGUI : MonoBehaviour{
 
     public float pHealthRectTop;
     public float pHealthRectLeft;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> github work or i kill you
     void Init(){
         playerControls = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
     }

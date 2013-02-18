@@ -20,6 +20,11 @@ public class Entity : MonoBehaviour{
     public int rotationSpeed = 0;
     public int strength = 0;
 	public int maxHealth = 100;
+<<<<<<< HEAD
+=======
+	public int mana = 0;
+	public int maxMana = 0;
+>>>>>>> github work or i kill you
     public float attackDistance = 0.0f;
     public float viewDistance = 0.0f;
     public float coolDownTime = 0.0f;
@@ -27,7 +32,12 @@ public class Entity : MonoBehaviour{
     public float attackTime = 0.0f;
 
     //When called the entity variables are set
+<<<<<<< HEAD
     public void InitEntity(string name, Transform targ, int hp, int maxhp, int ms, int rs, int minstr, int maxStr, float ad, float vd, float cdt){
+=======
+	//Bea - added mana here couldn't fix it any other way. before you rage I asked people. kkthxbai
+    public void InitEntity(string name, Transform targ, int hp, int maxhp,int mp, int maxmp, int ms, int rs, int minstr, int maxStr, float ad, float vd, float cdt){
+>>>>>>> github work or i kill you
         mobName = name;
         target = targ;
         health = hp;
@@ -81,4 +91,18 @@ public class Entity : MonoBehaviour{
 		    health = maxHealth;
 		}
 	}
+<<<<<<< HEAD
+=======
+	
+	public void AdjustMana(int adj){
+		mana -= adj;
+		
+		if (mana<0){
+			mana=0;
+		}
+		if (mana > maxMana){
+			mana = maxMana;
+		}
+	}
+>>>>>>> github work or i kill you
 }

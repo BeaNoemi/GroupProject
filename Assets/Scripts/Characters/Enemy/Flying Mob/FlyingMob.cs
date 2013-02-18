@@ -13,7 +13,11 @@ public class FlyingMob : Enemy{
     public Vector3 swoopPos = Vector3.zero;
 
 	void Start(){
+<<<<<<< HEAD
         InitEntity("Flying Mob", player, 100,100, 10, 10, 7, 16, 1f, 10, 1);
+=======
+        InitEntity("Flying Mob", player, 100,100,0,0, 10, 10, 7, 16, 1f, 10, 1);
+>>>>>>> github work or i kill you
         cooldownTimer = swoopTime;
     }
 	

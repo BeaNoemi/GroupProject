@@ -11,7 +11,11 @@ public class TeleporterAI : Enemy{
     public float cooldownTimer = 0;
 
 	void Start(){
+<<<<<<< HEAD
         InitEntity("Teleporter", player, 100,100, 10, 10, 15, 25, 1.5f, 10, 2);
+=======
+        InitEntity("Teleporter", player, 100,100,0,0, 10, 10, 15, 25, 1.5f, 10, 2);
+>>>>>>> github work or i kill you
         teleportTime = Random.Range(1, teleportMaxTime);
         cooldownTimer = teleportTime;
     }
