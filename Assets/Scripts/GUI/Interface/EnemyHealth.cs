@@ -13,7 +13,7 @@ public class EnemyHealth : MonoBehaviour {
 	
 	// Use this for initialization
 	void Init() {
-			EnemyControls = (Enemy)playerEnemy.GetComponent(typeof(Enemy));
+			//EnemyControls = (Enemy)playerEnemy.GetComponent(typeof(Enemy));
 	}
 	// Update is called once per frame
 	void Update () {

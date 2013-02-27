@@ -12,11 +12,7 @@ public class ImpAI : Enemy{
 	void Start(){
         impLeader = GameObject.Find("ImpLeader").transform;
         impLeaderAi = impLeader.GetComponent<ImpLeaderAI>();
-<<<<<<< HEAD
-        InitEntity("Imp", impLeader, 100,100, 6, 0, 3, 10, 1.5f, 10, 1);
-=======
         InitEntity("Imp", impLeader, 100,100,0,0,6, 0, 3, 10, 1.5f, 10, 1);
->>>>>>> github work or i kill you
     }
 	
 	void FixedUpdate(){

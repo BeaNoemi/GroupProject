@@ -53,12 +53,7 @@ public class PlayerControls : Entity{
     public float delayToFire;
 
 	void Start(){
-<<<<<<< HEAD
-        InitEntity("Player", null, 100, 100, 9, 4, 5, 15, 1.5f, 0, 1);
-
-=======
         InitEntity("Player", null, 100, 100,100,100,9, 4, 5, 15, 1.5f, 0, 1);
->>>>>>> github work or i kill you
         mCamera = Camera.mainCamera;
 
         delayToFire = delayBetweenFiring;

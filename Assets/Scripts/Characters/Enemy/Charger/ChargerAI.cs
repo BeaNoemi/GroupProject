@@ -8,11 +8,7 @@ public class ChargerAI : Enemy{
     public bool isCharging;
 
     void Start(){
-<<<<<<< HEAD
-        InitEntity("Charger", player, 100, 100, 3, 10, 15, 25, 1.5f, 10, 2);
-=======
         InitEntity("Charger", player, 100, 100,0,0, 3, 10, 15, 25, 1.5f, 10, 2);
->>>>>>> github work or i kill you
         cooldownChargeTimer = cooldownChargeTime;
     }
 

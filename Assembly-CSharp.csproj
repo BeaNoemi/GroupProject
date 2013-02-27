@@ -57,10 +57,13 @@
      <Compile Include="Assets\Scripts\Characters\Friendly\Pets\Pet.cs" />
      <Compile Include="Assets\Scripts\Characters\Friendly\Pets\PetAI.cs" />
      <Compile Include="Assets\Scripts\Characters\Friendly\Pets\PetAttack.cs" />
+     <Compile Include="Assets\Scripts\Characters\Friendly\StoreGUI.cs" />
      <Compile Include="Assets\Scripts\Characters\Player\CastingSpells.cs" />
      <Compile Include="Assets\Scripts\Characters\Player\PlayerCamera.cs" />
      <Compile Include="Assets\Scripts\Characters\Player\PlayerControls.cs" />
+     <Compile Include="Assets\Scripts\GUI\Interface\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\GUI\Interface\InterfaceGUI.cs" />
+     <Compile Include="Assets\Scripts\GUI\Interface\InterfaceMana.cs" />
      <Compile Include="Assets\Scripts\GUI\Main Menu\MainMenuGUI.cs" />
      <Compile Include="Assets\Scripts\GUI\Other\Cursor\CustomCursor.cs" />
      <Compile Include="Assets\Scripts\Other\FPSTest.cs" />
